@@ -49,11 +49,11 @@ $('.scroll_down').on('click', function (e) {
 	var button = $(this),
 		position_from_top = button.offset().top;
 	if (button.hasClass('up')) {
-		$('body').animate({
+		$('body, html').animate({
 			scrollTop: 0
 		}, 800);
 	} else {
-		$('body').animate({
+		$('body, html').animate({
 			scrollTop: position_from_top
 		}, 800);
 	}
