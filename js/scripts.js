@@ -33,11 +33,19 @@ var checkScrollButton = function () {
 	}
 }
 
+// top_blur = 4
+// $('#slideshow').attr('style', '-webkit-filter: blur(' + top_blur + 'px); -moz-filter: blur(' + top_blur + 'px);filter: blur(' + top_blur + 'px)');
+
 $(window).scroll(function () {
 	var distance_from_top = $(window).scrollTop(),
 		top = distance_from_top/2,
+        // top_blur = Math.ceil(top / 60) - 1,
 		button = $('.scroll_down');
-	$('#slideshow').attr('style', 'top: ' + top + 'px' );
+        // if (top_blur > 4) {
+        //     top_blur = 4;
+        // }
+	$('#slideshow img').attr('style', '-webkit-transform: translate(0,' + top + 'px);-moz-transform: translate(0,' + top + 'px);transform: translate(0,' + top + 'px);');
+	// $('#slideshow').attr('style', '-webkit-filter: blur(' + top_blur + 'px); -moz-filter: blur(' + top_blur + 'px);filter: blur(' + top_blur + 'px)');
 	if (distance_from_top > (button.offset().top / 2)) {
 		button.addClass('up');
 	} else {
